@@ -1,0 +1,21 @@
+.NavBar{
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  padding: 10px;
+  background: lightgreen;
+  button{
+    width: 65px;
+    background: none;
+    border: none; 
+    img{
+      width: 100%;
+    }
+  }
+  button:focus {
+    outline: none;
+  }
+  button:active{
+    transform: scale(0.9);  
+  }
+}
