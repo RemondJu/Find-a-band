@@ -2,11 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './HomePage.scss';
 import SearchBar from '../SearchBar';
+import NavBar from '../../containers/NavBar';
 
 const HomePage = (props) => {
   const { welcome } = props;
   return (
     <div className="HomePage">
+      <NavBar />
       <SearchBar />
       <h1>{welcome}</h1>
       <h3>How to use the platform ?</h3>
@@ -15,7 +17,7 @@ const HomePage = (props) => {
           <img
             width="30px"
             src="https://image.flaticon.com/icons/png/512/16/16036.png"
-            alt="Write icon"
+            alt="Login icon"
           />
           Log in or sign in to access your account
         </li>
@@ -31,7 +33,7 @@ const HomePage = (props) => {
           <img
             width="30px"
             src="http://simpleicon.com/wp-content/uploads/multy-user.png"
-            alt="Write icon"
+            alt="People icon"
           />
           Browse for musicians, bands in your town or anywhere else
         </li>
@@ -40,14 +42,14 @@ const HomePage = (props) => {
           <img
             width="30px"
             src="https://cdn1.iconfinder.com/data/icons/material-core/20/check-circle-outline-512.png"
-            alt="Write icon"
+            alt="Check icon"
           />
         </li>
         <li>
           <img
             width="30px"
             src="https://img.icons8.com/metro/1600/chat.png"
-            alt="Write icon"
+            alt="Chat icon"
           />
           Contact people and make some friends to play with !
         </li>

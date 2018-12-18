@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.scss';
 import { Switch, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
 import HomePage from './components/HomePage/HomePage';
+import LoginModal from './containers/LoginModal';
+import SearchPage from './components/SearchPage/SearchPage';
 
 const App = () => (
   <div className="App">
-    <NavBar />
+    <LoginModal />
     <Switch>
       <Route exact path="/" component={HomePage} />
+      <Route path="/search" component={SearchPage} />
     </Switch>
   </div>
 );
