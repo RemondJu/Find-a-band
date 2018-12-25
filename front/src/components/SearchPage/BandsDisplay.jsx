@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import BandCard from './BandCard';
 
 const BandsDisplay = (props) => {
-  const { bands } = props;
+  const { bands, bandsDiplayClass } = props;
+  console.log(props);
   return (
-    <div className="BandsDisplay">
+    <div className={`BandsDisplay ${bandsDiplayClass ? '' : 'hidden'}`}>
       <h2>Bands</h2>
       <div className="bandsCards">
         {bands.map(band => (
@@ -26,6 +27,7 @@ const BandsDisplay = (props) => {
 function mstp(state) {
   return {
     bands: state.bands,
+    bandsDiplayClass: state.bandsDiplayClass,
   };
 }
 

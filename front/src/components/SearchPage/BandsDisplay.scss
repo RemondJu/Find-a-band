@@ -1,9 +1,15 @@
 .BandsDisplay{
   text-align: center;
   margin: auto;
-  
+  h2{
+    margin: 20px 0px;
+  }
   .bandsCards{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   }
+}
+.hidden{
+  display: none;
 }

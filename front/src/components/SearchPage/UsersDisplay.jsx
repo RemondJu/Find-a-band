@@ -5,9 +5,10 @@ import UserCard from './UserCard';
 
 
 const UsersDisplay = (props) => {
-  const { users } = props;
+  const { users, usersDiplayClass } = props;
+  console.log(props);
   return (
-    <div className="UsersDisplay">
+    <div className={usersDiplayClass ? 'UsersDisplay' : 'hidden'}>
       <h2>Users</h2>
       <div className="userCards">
         {users.map(user => (
@@ -26,6 +27,7 @@ const UsersDisplay = (props) => {
 function mstp(state) {
   return {
     users: state.users,
+    usersDiplayClass: state.usersDiplay,
   };
 }
 

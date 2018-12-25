@@ -1,9 +1,15 @@
 .UsersDisplay{
   text-align: center;
   margin: auto;
-  
+  h2{
+    margin: 20px 0px;
+  }
   .userCards{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   }
+}
+.hidden{
+  display: none;
 }
