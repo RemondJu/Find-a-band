@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './UsersDisplay.scss';
-import UserCard from './UserCard';
+import UserCard from '../components/SearchPage/UserCard';
 
 
 const UsersDisplay = (props) => {
-  const { users, usersDiplayClass } = props;
-  console.log(props);
+  const { users, shouldDisplayUsers } = props;
   return (
-    <div className={usersDiplayClass ? 'UsersDisplay' : 'hidden'}>
-      <h2>Users</h2>
+    <div className={shouldDisplayUsers ? 'UsersDisplay' : 'hidden'}>
+      <h2>
+        Users
+      </h2>
       <div className="userCards">
         {users.map(user => (
           <UserCard
@@ -27,7 +28,7 @@ const UsersDisplay = (props) => {
 function mstp(state) {
   return {
     users: state.users,
-    usersDiplayClass: state.usersDiplay,
+    shouldDisplayUsers: state.shouldDisplayUsers,
   };
 }
 

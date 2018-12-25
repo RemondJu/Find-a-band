@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import NavBar from './NavBar';
 import SearchBar from '../components/SearchBar';
-import BandsDisplay from '../components/SearchPage/BandsDisplay';
-import UsersDisplay from '../components/SearchPage/UsersDisplay';
+import BandsDisplay from './BandsDisplay';
+import UsersDisplay from './UsersDisplay';
 import { displayBands, displayUsers } from '../actions';
+import './SearchPage.scss';
 
 const SearchPage = (props) => {
   const { displayBandsAction, displayUsersAction } = props;
@@ -13,7 +14,7 @@ const SearchPage = (props) => {
     <div className="SearchPage">
       <NavBar />
       <SearchBar />
-      <div>
+      <div className="searchSectionButtons">
         <button type="button" onClick={displayBandsAction}>
           <h2>Bands</h2>
         </button>

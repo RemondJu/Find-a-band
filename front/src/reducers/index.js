@@ -3,16 +3,16 @@ import welcome from './welcome';
 import modalDisplay from './modalDisplay';
 import users from './users';
 import bands from './bands';
-import bandsDisplayClass from './bandsDisplayClass';
-import usersDisplay from './usersDisplay';
+import shouldDisplayBands from './shouldDisplayBands';
+import shouldDisplayUsers from './shouldDisplayUsers';
 
 const allReducers = combineReducers({
   welcome,
   modalDisplay,
   users,
   bands,
-  bandsDisplayClass,
-  usersDisplay,
+  shouldDisplayBands,
+  shouldDisplayUsers,
 });
 
 export default allReducers;

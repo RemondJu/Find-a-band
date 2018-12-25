@@ -1,4 +1,4 @@
-const usersDisplay = (state = false, action) => {
+const shouldDisplayUsers = (state = false, action) => {
   switch (action.type) {
     case 'DISPLAY_USERS': return true;
     case 'DISPLAY_BANDS': return false;
@@ -6,4 +6,4 @@ const usersDisplay = (state = false, action) => {
   }
 };
 
-export default usersDisplay;
+export default shouldDisplayUsers;
