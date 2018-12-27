@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import NavBar from './NavBar';
 import SearchBar from '../components/SearchBar';
 import BandsDisplay from './BandsDisplay';
 import UsersDisplay from './UsersDisplay';
@@ -12,7 +11,6 @@ const SearchPage = (props) => {
   const { displayBandsAction, displayUsersAction } = props;
   return (
     <div className="SearchPage">
-      <NavBar />
       <SearchBar />
       <div className="searchSectionButtons">
         <button type="button" onClick={displayBandsAction}>
