@@ -5,7 +5,7 @@ import HomePage from './components/HomePage/HomePage';
 import LoginModal from './containers/LoginModal';
 import SearchPage from './containers/SearchPage';
 import BandPage from './components/BandPage';
-import BandContact from './components/ContactFormPage';
+import BandContact from './containers/ContactFormPage';
 import NavBar from './containers/NavBar';
 
 const App = () => (

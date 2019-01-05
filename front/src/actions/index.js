@@ -13,3 +13,18 @@ export const displayBands = () => ({
 export const displayUsers = () => ({
   type: 'DISPLAY_USERS',
 });
+
+export const nameInputAction = value => ({
+  type: 'NAME_INPUT_ACTION',
+  value,
+});
+
+export const emailInputAction = value => ({
+  type: 'EMAIL_INPUT_ACTION',
+  value,
+});
+
+export const messageInputAction = value => ({
+  type: 'MESSAGE_INPUT_ACTION',
+  value,
+});

@@ -29,7 +29,9 @@ const BandCard = (props) => {
           Some quick example text to build on the card
           title and make up the bulk of the card&aposs content.
         </p>
-        <button type="button">Contact</button>
+        <NavLink to="/contact-form">
+          <button type="button">Contact</button>
+        </NavLink>
       </div>
     </div>
   );
