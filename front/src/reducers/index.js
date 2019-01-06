@@ -8,6 +8,7 @@ import shouldDisplayUsers from './shouldDisplayUsers';
 import nameInput from './nameInput';
 import emailInput from './emailInput';
 import messageInput from './messageInput';
+import { fetchIsLoading, fetchHasErrored, fetchDataSuccess } from './fetch';
 
 const allReducers = combineReducers({
   welcome,
@@ -19,6 +20,9 @@ const allReducers = combineReducers({
   nameInput,
   emailInput,
   messageInput,
+  fetchDataSuccess,
+  fetchIsLoading,
+  fetchHasErrored,
 });
 
 export default allReducers;

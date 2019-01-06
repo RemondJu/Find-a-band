@@ -1,12 +1,12 @@
 export function itemsHasErrored(bool) {
   return {
-    type: 'ITEMS_HAS_ERRORED',
+    type: 'ITEM_HAS_ERRORED',
     hasErrored: bool,
   };
 }
 export function itemsIsLoading(bool) {
   return {
-    type: 'ITEMS_IS_LOADING',
+    type: 'ITEM_IS_LOADING',
     isLoading: bool,
   };
 }
@@ -17,7 +17,7 @@ export function fetchDataSuccess(items) {
   };
 }
 
-export function fetchUsers(url) {
+export function fetchData(url) {
   return (dispatch) => {
     dispatch(itemsIsLoading(true));
     fetch(url)
