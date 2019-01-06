@@ -27,7 +27,7 @@ const BandsDisplay = (props) => {
 
 function mstp(state) {
   return {
-    bands: state.bands,
+    bands: state.fetchDataSuccess,
     shouldDisplayBands: state.shouldDisplayBands,
   };
 }
