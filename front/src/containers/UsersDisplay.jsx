@@ -11,7 +11,6 @@ class UsersDisplay extends Component {
   componentDidMount() {
     const { fetchDataAction } = this.props;
     fetchDataAction('http://localhost:3600/api/users');
-    console.log(this.props);
   }
 
   render() {

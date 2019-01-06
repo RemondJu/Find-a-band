@@ -30,4 +30,15 @@ router.get('/users', (req, res) => {
   });
 });
 
+router.get('/bands', (req, res) => {
+  connection.query('SELECT * FROM bands', (err, result) => {
+    if (err) {
+      console.log('Error during users fetching: ', err);
+      res.sendStatus(500);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
 export default router;
