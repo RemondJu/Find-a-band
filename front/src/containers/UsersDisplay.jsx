@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchData } from '../actions/fetch';
+import { fetchUsers } from '../actions/fetch';
 import './UsersDisplay.scss';
 import UserCard from '../components/SearchPage/UserCard';
 
-//  'http://localhost:3600/api/users';
-
 class UsersDisplay extends Component {
   componentDidMount() {
-    const { fetchDataAction } = this.props;
-    fetchDataAction('http://localhost:3600/api/users');
+    const { fetchUsersAction } = this.props;
+    fetchUsersAction('http://localhost:3600/api/users');
   }
 
   render() {
@@ -50,14 +48,14 @@ class UsersDisplay extends Component {
 }
 
 const mstp = state => ({
-  users: state.fetchDataSuccess,
+  users: state.fetchUsersSuccess,
   isLoading: state.fetchIsLoading,
   hasErrored: state.fetchHasErrored,
   shouldDisplayUsers: state.shouldDisplayUsers,
 });
 
 const mdtp = dispatch => bindActionCreators({
-  fetchDataAction: fetchData,
+  fetchUsersAction: fetchUsers,
 }, dispatch);
 
 export default connect(mstp, mdtp)(UsersDisplay);

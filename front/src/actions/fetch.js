@@ -10,14 +10,14 @@ export function itemsIsLoading(bool) {
     isLoading: bool,
   };
 }
-export function fetchDataSuccess(items) {
+export function fetchBandsSuccess(bands) {
   return {
-    type: 'FETCH_DATA_SUCCESS',
-    items,
+    type: 'FETCH_BANDS_SUCCESS',
+    bands,
   };
 }
 
-export function fetchData(url) {
+export function fetchBands(url) {
   return (dispatch) => {
     dispatch(itemsIsLoading(true));
     fetch(url)
@@ -29,7 +29,31 @@ export function fetchData(url) {
         return response;
       })
       .then(response => response.json())
-      .then(items => dispatch(fetchDataSuccess(items)))
+      .then(items => dispatch(fetchBandsSuccess(items)))
+      .catch(() => dispatch(itemsHasErrored(true)));
+  };
+}
+
+export function fetchUsersSuccess(users) {
+  return {
+    type: 'FETCH_USERS_SUCCESS',
+    users,
+  };
+}
+
+export function fetchUsers(url) {
+  return (dispatch) => {
+    dispatch(itemsIsLoading(true));
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        dispatch(itemsIsLoading(false));
+        return response;
+      })
+      .then(response => response.json())
+      .then(items => dispatch(fetchUsersSuccess(items)))
       .catch(() => dispatch(itemsHasErrored(true)));
   };
 }

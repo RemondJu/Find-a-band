@@ -12,9 +12,16 @@ export const fetchIsLoading = (state = false, action) => {
   }
 };
 
-export const fetchDataSuccess = (state = [], action) => {
+export const fetchBandsSuccess = (state = [], action) => {
   switch (action.type) {
-    case 'FETCH_DATA_SUCCESS': return action.items;
+    case 'FETCH_BANDS_SUCCESS': return action.bands;
+    default: return state;
+  }
+};
+
+export const fetchUsersSuccess = (state = [], action) => {
+  switch (action.type) {
+    case 'FETCH_USERS_SUCCESS': return action.users;
     default: return state;
   }
 };

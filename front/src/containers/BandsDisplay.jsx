@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import './BandsDisplay.scss';
 import BandCard from '../components/SearchPage/BandCard';
-import { fetchData } from '../actions/fetch';
+import { fetchBands } from '../actions/fetch';
 
 class BandsDisplay extends Component {
   componentDidMount() {
-    const { fetchDataAction } = this.props;
-    fetchDataAction('http://localhost:3600/api/bands');
+    const { fetchBandsAction } = this.props;
+    fetchBandsAction('http://localhost:3600/api/bands');
   }
 
   render() {
@@ -35,12 +35,12 @@ class BandsDisplay extends Component {
 }
 
 const mstp = state => ({
-  bands: state.fetchDataSuccess,
+  bands: state.fetchBandsSuccess,
   shouldDisplayBands: state.shouldDisplayBands,
 });
 
 const mdtp = dispatch => bindActionCreators({
-  fetchDataAction: fetchData,
+  fetchBandsAction: fetchBands,
 }, dispatch);
 
 export default connect(mstp, mdtp)(BandsDisplay);
