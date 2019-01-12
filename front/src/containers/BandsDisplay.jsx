@@ -22,10 +22,12 @@ class BandsDisplay extends Component {
           {bands.map(band => (
             <BandCard
               key={band.band_id}
+              id={band.band_id}
               name={band.name}
               members={band.members}
-              maxMembers={band.maxMembers}
+              maxMembers={band.max_members}
               email={band.email}
+              bio={band.bio}
             />
           ))}
         </div>

@@ -4,11 +4,11 @@ import { NavLink } from 'react-router-dom';
 
 const BandCard = (props) => {
   const {
-    name, members, maxMembers, email,
+    name, members, maxMembers, email, id, bio,
   } = props;
   return (
     <div className="BandCard">
-      <NavLink to="/BandPage">
+      <NavLink to={`/BandPage/:${id}`}>
         <img
           width="100%"
           src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
@@ -25,8 +25,7 @@ const BandCard = (props) => {
           {maxMembers}
         </p>
         <p>
-          Some quick example text to build on the card
-          title and make up the bulk of the card&aposs content.
+          {bio}
         </p>
         <NavLink to="/contact-form">
           <button type="button">Contact</button>
