@@ -19,6 +19,13 @@ export const fetchBandsSuccess = (state = [], action) => {
   }
 };
 
+export const fetchBandSuccess = (state = [], action) => {
+  switch (action.type) {
+    case 'FETCH_BAND_SUCCESS': return action.band;
+    default: return state;
+  }
+};
+
 export const fetchUsersSuccess = (state = [], action) => {
   switch (action.type) {
     case 'FETCH_USERS_SUCCESS': return action.users;

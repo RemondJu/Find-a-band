@@ -38,16 +38,16 @@ class ContactFormPage extends Component {
         <form onSubmit={this.handleContactSubmit}>
           <label htmlFor="name">
             Name:
+            <input type="text" name="name" id="name" value={name} onChange={this.handleContactInput} />
           </label>
-          <input type="text" name="name" id="name" value={name} onChange={this.handleContactInput} />
           <label htmlFor="email">
             Email:
+            <input type="email" name="email" value={email} onChange={this.handleContactInput} />
           </label>
-          <input type="email" name="email" value={email} onChange={this.handleContactInput} />
           <label htmlFor="message">
             Message:
+            <textarea type="text" name="message" value={message} onChange={this.handleContactInput} />
           </label>
-          <textarea type="text" name="message" value={message} onChange={this.handleContactInput} />
           <button type="submit">Send</button>
         </form>
       </div>

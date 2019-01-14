@@ -41,4 +41,15 @@ router.get('/bands', (req, res) => {
   });
 });
 
+router.get('/band/:id', (req, res) => {
+  connection.query('SELECT * FROM bands WHERE band_id = ?', req.params.id, (err, result) => {
+    if (err) {
+      console.log('Error during band fetching: ', err);
+      res.sendStatus(500);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
 export default router;

@@ -11,6 +11,7 @@ import {
   fetchIsLoading,
   fetchHasErrored,
   fetchBandsSuccess,
+  fetchBandSuccess,
   fetchUsersSuccess,
 } from './fetch';
 
@@ -24,6 +25,7 @@ const allReducers = combineReducers({
   emailInput,
   messageInput,
   fetchBandsSuccess,
+  fetchBandSuccess,
   fetchUsersSuccess,
   fetchIsLoading,
   fetchHasErrored,

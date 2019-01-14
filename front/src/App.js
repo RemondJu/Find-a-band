@@ -5,8 +5,8 @@ import HomePage from './components/HomePage/HomePage';
 import LoginModal from './containers/LoginModal';
 import SearchPage from './containers/SearchPage';
 import BandPage from './components/BandPage';
-import BandContact from './containers/ContactFormPage';
 import NavBar from './containers/NavBar';
+import ContactFormPage from './containers/ContactFormPage';
 
 const App = () => (
   <div className="App">
@@ -16,7 +16,7 @@ const App = () => (
       <Route exact path="/" component={HomePage} />
       <Route path="/search" component={SearchPage} />
       <Route path="/BandPage/:id" component={BandPage} />
-      <Route path="/contact-form" component={BandContact} />
+      <Route path="/band-contact-form" component={ContactFormPage} />
     </Switch>
   </div>
 );
