@@ -13,7 +13,6 @@ class BandPage extends Component {
 
   componentDidMount() {
     const { match, fetchBandAction } = this.props;
-    console.log(match.params.id);
     fetchBandAction(`http://localhost:3600/api/band/${match.params.id}`);
   }
 
@@ -21,10 +20,9 @@ class BandPage extends Component {
     const { band } = this.props;
     return (
       <div className="BandPage">
-        {console.log(this.props)}
         <h1>{band ? band.name : 'Band name'}</h1>
         <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=1150%C3%97380&w=1150&h=380" alt="placeholder" />
-        <p>Band informations</p>
+        <p>{band ? band.bio : 'Band informations'}</p>
         <NavLink to="band-contact-form">
           <button type="button">Contact</button>
         </NavLink>
