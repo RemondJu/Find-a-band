@@ -13,7 +13,7 @@ class ContactFormPage extends Component {
       message: '',
     };
     this.handleContactInput = this.handleContactInput.bind(this);
-    this.handleContactSubmit = this.handleContactSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleContactInput(e) {
@@ -22,20 +22,30 @@ class ContactFormPage extends Component {
     });
   }
 
-  handleContactSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault();
-    this.setState({
-      name: '',
-      email: '',
-      message: '',
-    });
+    const { name, email, message } = this.state;
+    const data = {
+      name,
+      email,
+      message,
+    };
+    const config = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+    fetch('http://localhost:3600/api/', config)
+      .then(res => res.json());
   }
 
   render() {
     const { name, email, message } = this.state;
     return (
       <div className="ContactFormPage">
-        <form onSubmit={this.handleContactSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="name">
             Name:
             <input type="text" name="name" id="name" value={name} onChange={this.handleContactInput} />

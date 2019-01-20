@@ -1,16 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './SearchBar.scss';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
-const SearchBar = () => (
-  <div className="SearchBar">
-    <input />
-    <NavLink to="/search">
-      <button type="submit">
-        <img src="https://image.flaticon.com/icons/png/512/9/9383.png" alt="search button" />
-      </button>
-    </NavLink>
-  </div>
-);
+class SearchBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-export default SearchBar;
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log('will do stuff');
+  }
+
+  render() {
+    return (
+      <div className="SearchBar">
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" />
+          <NavLink to="/search">
+            <button type="submit">
+              <img src="https://image.flaticon.com/icons/png/512/9/9383.png" alt="search button" />
+            </button>
+          </NavLink>
+        </form>
+      </div>
+    );
+  }
+}
+
+export default withRouter(SearchBar);
