@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { nameInputAction, emailInputAction, messageInputAction } from '../actions';
 import './ContactFormPage.scss';
 
 class ContactFormPage extends Component {
@@ -65,16 +62,4 @@ class ContactFormPage extends Component {
   }
 }
 
-const mstp = state => ({
-  nameInput: state.nameInput,
-  emailInput: state.emailInput,
-  messageInput: state.messageInput,
-});
-
-const mdtp = dispatch => bindActionCreators({
-  nameInputAction,
-  emailInputAction,
-  messageInputAction,
-}, dispatch);
-
-export default connect(mstp, mdtp)(ContactFormPage);
+export default ContactFormPage;

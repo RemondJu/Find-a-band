@@ -4,9 +4,7 @@ import modalDisplay from './modalDisplay';
 import bands from './bands';
 import shouldDisplayBands from './shouldDisplayBands';
 import shouldDisplayUsers from './shouldDisplayUsers';
-import nameInput from './nameInput';
-import emailInput from './emailInput';
-import messageInput from './messageInput';
+import user from './user';
 import {
   fetchIsLoading,
   fetchHasErrored,
@@ -21,14 +19,12 @@ const allReducers = combineReducers({
   bands,
   shouldDisplayBands,
   shouldDisplayUsers,
-  nameInput,
-  emailInput,
-  messageInput,
   fetchBandsSuccess,
   fetchBandSuccess,
   fetchUsersSuccess,
   fetchIsLoading,
   fetchHasErrored,
+  user,
 });
 
 export default allReducers;
