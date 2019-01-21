@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './SearchBar.scss';
 import { NavLink, withRouter } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { displayBands, displayUsers } from '../actions';
+import { fetchSearchFilter } from '../actions/fetch';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -21,7 +25,9 @@ class SearchBar extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { searchFilter } = this.state;
+    const { fetchSearchFilterAction } = this.props;
     console.log('will fetch stuff');
+    fetchSearchFilterAction(`http://localhost:3600/api/filter-bands/${searchFilter}`);
   }
 
   render() {
@@ -41,4 +47,12 @@ class SearchBar extends Component {
   }
 }
 
-export default withRouter(SearchBar);
+function mdtp(dispatch) {
+  return bindActionCreators({
+    displayBandsAction: displayBands,
+    displayUsersAction: displayUsers,
+    fetchSearchFilterAction: fetchSearchFilter,
+  }, dispatch);
+}
+
+export default withRouter(connect(null, mdtp)(SearchBar));

@@ -52,4 +52,14 @@ router.get('/band/:id', (req, res) => {
   });
 });
 
+router.get('/filter-bands/:filter', (req, res) => {
+  connection.query(`SELECT * FROM bands WHERE name LIKE '%${req.params.filter}%'`, (err, result) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
 export default router;

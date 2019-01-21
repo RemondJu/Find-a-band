@@ -32,3 +32,10 @@ export const fetchUsersSuccess = (state = [], action) => {
     default: return state;
   }
 };
+
+export const fetchFilteredBandsSuccess = (state = [], action) => {
+  switch (action.type) {
+    case 'FETCH_SEARCH_FILTER_SUCCESS': return action.items;
+    default: return state;
+  }
+};

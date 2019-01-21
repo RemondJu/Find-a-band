@@ -73,7 +73,7 @@ export const fetchSearchFilterSuccess = items => ({
   items,
 });
 
-export const fetchSearchFilter = (searchFilter, url) => (dispatch) => {
+export const fetchSearchFilter = url => (dispatch) => {
   dispatch(itemsIsLoading(true));
   fetch(url)
     .then(res => res.json())

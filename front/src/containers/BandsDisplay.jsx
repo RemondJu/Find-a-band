@@ -39,6 +39,7 @@ class BandsDisplay extends Component {
 const mstp = state => ({
   bands: state.fetchBandsSuccess,
   shouldDisplayBands: state.shouldDisplayBands,
+  fetchFilteredBandsSuccess: state.fetchFilteredBandsSuccess,
 });
 
 const mdtp = dispatch => bindActionCreators({
