@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './ContactFormPage.scss';
+import { connect } from 'react-redux';
 
 class ContactFormPage extends Component {
   constructor(props) {
@@ -21,11 +22,12 @@ class ContactFormPage extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { name, email, message } = this.state;
+    const { message } = this.state;
+    const { userId, match } = this.props;
     const data = {
-      name,
-      email,
-      message,
+      sender_id: userId,
+      receiver_id: match.params.id,
+      content: message,
     };
     const config = {
       method: 'POST',
@@ -34,7 +36,7 @@ class ContactFormPage extends Component {
       },
       body: JSON.stringify(data),
     };
-    fetch('http://localhost:3600/api/', config)
+    fetch('http://localhost:3600/api/send-message', config)
       .then(res => res.json());
   }
 
@@ -62,4 +64,8 @@ class ContactFormPage extends Component {
   }
 }
 
-export default ContactFormPage;
+const mstp = state => ({
+  userId: state.user.id,
+});
+
+export default connect(mstp)(ContactFormPage);

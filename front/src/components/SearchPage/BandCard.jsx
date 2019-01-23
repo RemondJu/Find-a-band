@@ -27,7 +27,7 @@ const BandCard = (props) => {
         <p>
           {bio}
         </p>
-        <NavLink to="/band-contact-form">
+        <NavLink to={`/band-contact-form/${id}`}>
           <button type="button">Contact</button>
         </NavLink>
       </div>

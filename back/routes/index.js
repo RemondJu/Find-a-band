@@ -62,4 +62,15 @@ router.get('/filter-bands/:filter', (req, res) => {
   });
 });
 
+router.post('/send-message', (req, res) => {
+  const formData = req.body;
+  connection.query('INSERT INTO messages SET ?', formData, (err, result) => {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
 export default router;
